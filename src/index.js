@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const multer = require('multer');
-const path = require('path')
+const path = require('path');
+const { send } = require('process');
 
 const app = express();
 
@@ -32,6 +33,9 @@ app.use(require('./routes/users.routes'));
 app.use(require('./routes/cartItems.routes'));
 app.use(require('./routes/payments.routes'));
 app.use(require('./routes/noUsers.routes'));
+app.use('/', () => {
+    return send('connected')
+})
 
 
 
