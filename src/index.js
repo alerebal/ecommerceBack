@@ -34,7 +34,7 @@ app.use(require('./routes/cartItems.routes'));
 app.use(require('./routes/payments.routes'));
 app.use(require('./routes/noUsers.routes'));
 app.use('/', () => {
-    return send('connected')
+    send('connected')
 })
 
 
